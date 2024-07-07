@@ -1,0 +1,6 @@
+import = ["/home/dax/.config/alacritty/themes/themes/github_dark_tritanopia.toml"]
+live_config_reload = true
+window.opacity = 0.8
+[font]
+normal = { family = "Hack Nerd Font" }
+
