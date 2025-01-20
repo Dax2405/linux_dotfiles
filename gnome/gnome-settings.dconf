@@ -1,13 +1,10 @@
 [org/gnome/Ptyxis]
-default-profile-uuid='0d8ce2c82816cee4cace0a81674a51b3'
 font-name='Source Code Pro Medium 11'
-profile-uuids=['0d8ce2c82816cee4cace0a81674a51b3']
 restore-session=false
 restore-window-size=false
 use-system-font=false
 window-size=(uint32 80, uint32 24)
 
-[org/gnome/Ptyxis/Profiles/0d8ce2c82816cee4cace0a81674a51b3]
 bold-is-bright=true
 
 [org/gnome/Totem]
@@ -37,10 +34,6 @@ window-maximized=false
 window-size=(390, 504)
 word-size=64
 
-[org/gnome/calendar]
-active-view='month'
-window-maximized=false
-window-size=(768, 600)
 
 [org/gnome/control-center]
 last-panel='network'
