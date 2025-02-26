@@ -111,3 +111,11 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
+
+
+function auto_venv() {
+  if [ -e ".venv/bin/activate" ]; then
+    source .venv/bin/activate
+  fi
+}
+chpwd_functions+=auto_venv
