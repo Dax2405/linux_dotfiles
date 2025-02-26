@@ -36,7 +36,7 @@ bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
 
 # History
-HISTSIZE=5000
+HISTSIZE=100000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
@@ -55,12 +55,49 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-# Aliases
+# ----------------------------    Aliases   ----------------------------
 alias ls='lsd'
 alias ll='lsd -l'
 alias la='lsd -a'
 alias vim='nvim'
 alias c='clear'
+
+# Git
+alias ga='git add .'
+alias gc='git commit -m'
+alias gp='git push'
+alias gl='git pull'
+alias gs='git status'
+alias gd='git diff'
+alias gco='git checkout'
+alias gb='git branch'
+alias gcb='git checkout -b'
+
+# Docker
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
+alias dps='docker ps'
+alias drm='docker rm $(docker ps -aq)'
+alias drmi='docker rmi $(docker images -q)'
+
+# Java
+alias javacomp="javac -Xlint:unchecked"
+
+# Python
+alias py='python'
+alias pipi='pip install'
+alias venv="python -m venv .venv && source .venv/bin/activate"
+
+# System shortcuts
+alias cls='clear'
+alias reload='exec zsh'
+alias szsh='source ~/.zshrc'
+
+# Neovim shortcuts
+alias vim='nvim'
+alias vi='nvim'
+alias v='nvim'
+
 
 # Shell integrations
 eval "$(fzf --zsh)"
