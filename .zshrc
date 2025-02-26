@@ -10,6 +10,10 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
+zinit light zdharma-continuum/fast-syntax-highlighting
+zinit light psprint/zsh-navigation-tools
+zinit light dvorka/hstr  # CLI history manager (Ctrl-R replacement)
+zinit light ohmyzsh/ohmyzsh plugins/git-extras
 
 # Add in snippets
 zinit snippet OMZL::git.zsh
@@ -51,15 +55,18 @@ setopt hist_find_no_dups
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/zcompcache"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
+
 # ----------------------------    Aliases   ----------------------------
-alias ls='lsd'
-alias ll='lsd -l'
-alias la='lsd -a'
-alias vim='nvim'
+export LS_COLORS="$(vivid generate one-dark)"
+alias ls='lsd --group-dirs=first --color=auto'
+alias ll='lsd -lh'
+alias la='lsd -lha'
 alias c='clear'
 
 # Git
